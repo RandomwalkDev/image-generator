@@ -1,4 +1,5 @@
 import { useState } from "react";
+import randomWalkLogo from "./assets/randomwalk.png"
 
 function App() {
   const [url, setUrl] = useState(null);
@@ -28,10 +29,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen relative flex items-center justify-center p-4">
-      <h1 className="text-3xl font-bold text-[#7D3E28] mb-6 text-center absolute top-2 left-5">
-        Image Generator
+    <div className="min-h-screen relative flex flex-col items-center justify-center p-4">
+      <h1 className="text-3xl font-bold text-[#7D3E28] mb-6 text-center absolute top-10 left-5">
+        ஓவியம் Creation
       </h1>
+      <div className="flex">
+        <p>Powered by</p>
+        <img src={randomWalkLogo} alt="randomwalk-logo" className="w-36"/>
+      </div>
       <div className="bg-white/20 backdrop-blur-md rounded-lg shadow-2xl p-8 w-full max-w-2xl">
         {url && (
           <div className="mb-6 flex justify-center">
@@ -48,7 +53,7 @@ function App() {
           id="prompt"
           value={prompt}
           onChange={handleChange}
-          placeholder="Enter a prompt to generate an Image..."
+          placeholder="ஒரு படத்தை உருவாக்க ஒரு கட்டளையை உள்ளிடவும்..."
           className="w-full p-3 rounded-lg bg-white/30 text-[#7D3E28] placeholder-[#7D3E28]/50 outline-none border-2 border-[#FF9E7B] resize-none"
           rows={4}
         />
